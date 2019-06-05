@@ -2,7 +2,7 @@
 
 usage() {
     cat << EOF >&2
-usage: $0 [FORMAT] [DIRECTORY] FILES...
+usage: $0 <FORMAT> <DIRECTORY> FILES...
 
 Rename the given FILES to a sequence of numbers, as per FORMAT.
 
