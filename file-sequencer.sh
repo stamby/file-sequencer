@@ -19,11 +19,8 @@ if [ "$1" = --help ]; then
     usage
 fi
 
-# Validate arguments
-
 if [ $# -lt 3 ]; then
-    printf "Error: %d argument(s) supplied, 3 needed.\n" $#
-    printf "Type '$0 --help' for details.\n" >&2
+    usage
     exit 1
 fi
 
@@ -32,10 +29,10 @@ COMMAND=cp
 format="$1"
 resulting_dir="$2"
 
-printf "$format" | grep -qE '%[0-9]*d'
+printf "%s" "$format" | grep -qE '%[0-9]*d'
 
 if [ $? != 0 ]; then
-    printf "Error: '$format' is not a valid format specifier.\n" "$format" >&2
+    printf "Error: '%s' is not a valid format specifier.\n" "$format" >&2
     printf "Type '$0 --help' for details.\n" >&2
     exit 1
 fi
@@ -61,3 +58,10 @@ for item in "$@"; do
 
     command $COMMAND -v "$item" "$resulting_dir/$(printf "$format" $count)"
 done
+
+rmdir "$resulting_dir" 2> /dev/null
+if [ $? = 0 ]; then
+    printf "Error: no files were copied into '%s', removing directory.\n" \
+       "$resulting_dir" >&2
+    exit 3
+fi
