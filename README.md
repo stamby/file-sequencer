@@ -8,7 +8,7 @@ Usage: run `./file-sequencer.sh --help`
 Recommended usage: sorting them by date
 
 ```shell
-ls -tr | xargs ./file-sequencer.sh '%04d.txt' new_dir
+ls -tr *.txt | xargs ./file-sequencer.sh '%04d.txt' new_dir
 ```
 
 Result of the above command:
