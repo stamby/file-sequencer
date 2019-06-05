@@ -51,7 +51,7 @@ for item in "$@"; do
         continue
     fi
 
-    command $COMMAND -v "$item" "$resulting_dir/$(printf "$format" $count)"
+    command $COMMAND -pv "$item" "$resulting_dir/$(printf "$format" $count)"
 done
 
 rmdir "$resulting_dir" 2> /dev/null
