@@ -33,6 +33,7 @@ if [ $? != 0 ]; then
     exit 1
 fi
 
+resulting_dir="$(printf "$resulting_dir" | sed 's./$..')"
 if [ ! -e "$resulting_dir" ]; then
     mkdir -v "$resulting_dir"
     if [ ! -d "$resulting_dir" ]; then
@@ -41,7 +42,6 @@ if [ ! -e "$resulting_dir" ]; then
         exit 2
     fi
 fi
-resulting_dir="$(printf "$resulting_dir" | sed 's./$..')"
 
 count=-2
 
