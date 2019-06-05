@@ -5,7 +5,7 @@ Renames files to make a sequence with them.
 Recommended usage: to sort them by date
 
 ```shell
-ls -tr | xargs ./file-sequencer.sh "%04d.txt"
+ls -tr | xargs ./file-sequencer.sh "%04d.txt" new_dir
 ```
 
 Result:
