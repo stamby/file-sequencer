@@ -15,11 +15,7 @@ EOF
     exit 1
 }
 
-if [ "$1" = --help ]; then
-    usage
-fi
-
-if [ $# -lt 3 ]; then
+if [ "$1" = --help ] || [ $# -lt 3 ]; then
     usage
 fi
 
