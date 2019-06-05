@@ -1,6 +1,9 @@
 # file-sequencer
 
-Renames files to make a sequence with them.
+Renames files to make a sequence with them, in the order in which they were
+passed as arguments.
+
+Usage: run `./file-sequencer.sh --help`
 
 Recommended usage: sorting them by date
 
