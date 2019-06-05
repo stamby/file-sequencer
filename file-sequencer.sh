@@ -60,4 +60,3 @@ if [ $? = 0 ]; then
        "$resulting_dir" >&2
     exit 3
 fi
-exit 0
