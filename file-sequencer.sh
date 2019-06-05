@@ -21,7 +21,6 @@ fi
 
 if [ $# -lt 3 ]; then
     usage
-    exit 1
 fi
 
 # Either 'cp' or 'mv' will do
