@@ -4,7 +4,7 @@ usage() {
     cat << EOF >&2
 usage: $0 [FORMAT] [DIRECTORY] FILES...
 
-Rename the given FILES to a sequence of numbers, as by FORMAT.
+Rename the given FILES to a sequence of numbers, as per FORMAT.
 
 FORMAT examples:
 "%04d" to name files 0001, 0002, [...] 0100
