@@ -40,8 +40,8 @@ if [ ! -e "$resulting_dir" ]; then
             "$resulting_dir" >&2
         exit 2
     fi
-    resulting_dir="$(printf "$resulting_dir" | sed 's./$..')"
 fi
+resulting_dir="$(printf "$resulting_dir" | sed 's./$..')"
 
 count=-2
 
