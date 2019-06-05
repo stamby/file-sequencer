@@ -32,7 +32,7 @@ COMMAND=cp
 format="$1"
 resulting_dir="$2"
 
-printf "$format" | grep -qE '%[0-9]+d'
+printf "$format" | grep -qE '%[0-9]*d'
 
 if [ $? != 0 ]; then
     printf "Error: '$format' is not a valid format specifier.\n" "$format" >&2
