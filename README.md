@@ -16,6 +16,9 @@ Result of the above command:
 - Oldest file named *0001.txt* under new directory *new_dir*
 - Newest file named the maximum file sequence number, plus extension.
 
-To-do:
+To see the newly copied files in the last example, do:
 
-- Preserve old names, only changing them by adding the sequence number in FORMAT.
+```shell
+cd new_dir
+ls
+```
