@@ -10,7 +10,7 @@ FORMAT examples:
 "%04d" to name files 0001, 0002, [...] 0100
 "DSC_%04d.JPG" to name them DSC_0001.JPG, DSC_0002.JPG, [...] DSC_0100.JPG
 
-DIRECTORY is where the renamed FILES will be copied to, will be created if non
+DIRECTORY is where the renamed FILES will be copied, will be created if non
 existent.
 EOF
     exit 1
