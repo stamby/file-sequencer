@@ -26,6 +26,5 @@ ls
 Another example:
 <p align="center">
   <img
-       width="400"
        src="https://cdn.discordapp.com/attachments/189767908509876224/585853094986907680/unknown.png">
 </p>
