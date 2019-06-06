@@ -6,7 +6,9 @@ usage: $0 FORMAT DIRECTORY FILES...
 
 Rename the given FILES to a sequence of numbers, as per FORMAT.
 
-FORMAT examples:
+FORMAT should be written the way it is with 'printf', leaving room for a
+single number to appear in the file names. For example:
+
 "%04d" to name files 0001, 0002, [...] 0100
 "DSC_%04d.JPG" to name them DSC_0001.JPG, DSC_0002.JPG, [...] DSC_0100.JPG
 
@@ -28,7 +30,7 @@ resulting_dir="$2"
 printf "%s" "$format" | grep -qE '%[0-9]*[di]'
 
 if [ $? != 0 ]; then
-    printf "Error: '%s' is not a valid format specifier.\n" "$format" >&2
+    printf "error: '%s' is not a valid format specifier.\n" "$format" >&2
     printf "Type '$0 --help' for details.\n" >&2
     exit 1
 fi
@@ -37,7 +39,7 @@ resulting_dir="$(printf "$resulting_dir" | sed 's./$..')"
 if [ ! -e "$resulting_dir" ]; then
     mkdir -v "$resulting_dir"
     if [ ! -d "$resulting_dir" ]; then
-        printf "Error: the directory '%s' could not be created.\n" \
+        printf "error: the directory '%s' could not be created.\n" \
             "$resulting_dir" >&2
         exit 2
     fi
@@ -57,7 +59,7 @@ done
 
 rmdir "$resulting_dir" 2> /dev/null
 if [ $? = 0 ]; then
-    printf "Error: no files were copied into '%s', removing directory.\n" \
+    printf "error: no files were copied into '%s', removing directory.\n" \
        "$resulting_dir" >&2
     exit 3
 fi
