@@ -1,8 +1,10 @@
 #!/bin/sh
 
+name="`basename $0`"
+
 usage() {
     cat << EOF >&2
-usage: $0 FORMAT DIRECTORY FILES...
+usage: $name FORMAT DIRECTORY FILES...
 
 Rename the given FILES to a sequence of numbers, as per FORMAT.
 
@@ -31,7 +33,7 @@ printf "%s" "$format" | grep -qE '%[0-9]*[di]'
 
 if [ $? != 0 ]; then
     printf "error: '%s' is not a valid format specifier.\n" "$format" >&2
-    printf "Type '$0 --help' for details.\n" >&2
+    printf "Type '$name --help' for details.\n" >&2
     exit 1
 fi
 
