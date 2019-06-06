@@ -50,13 +50,14 @@ fi
 count=-2
 
 for item in "$@"; do
-    count=$(($count+1))
     # Will ignore the first two arguments
-    if [ $count -lt 1 ]; then
+    if [ $count -lt 0 ]; then
+        count=$(($count+1))
         continue
     fi
 
-    command $COMMAND "$item" "$resulting_dir/$(printf "$format" $count)"
+    command $COMMAND "$item" "$resulting_dir/$(printf "$format" $count)" &&\
+        count=$(($count+1))
 done
 
 rmdir "$resulting_dir" 2> /dev/null
