@@ -20,7 +20,7 @@ EOF
     exit 1
 }
 
-if [ "$1" = --help ] || [ $# -lt 3 ]; then
+if [ $# -lt 3 ]; then
     usage
 fi
 
