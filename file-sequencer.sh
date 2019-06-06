@@ -6,8 +6,8 @@ usage: $0 FORMAT DIRECTORY FILES...
 
 Rename the given FILES to a sequence of numbers, as per FORMAT.
 
-FORMAT should be written the way it is with 'printf', leaving room for a
-single number to appear in the file names. For example:
+FORMAT should be written the way it is with 'printf', leaving room for a single
+number to appear in the file names. For example:
 
 "%04d" to name files 0001, 0002, [...] 0100
 "DSC_%04d.JPG" to name them DSC_0001.JPG, DSC_0002.JPG, [...] DSC_0100.JPG
