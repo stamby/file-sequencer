@@ -63,6 +63,6 @@ done
 rmdir "$resulting_dir" 2> /dev/null
 if [ $? = 0 ]; then
     printf "error: no files were copied into '%s', removing directory.\n" \
-       "$resulting_dir" >&2
+        "$resulting_dir" >&2
     exit 3
 fi
