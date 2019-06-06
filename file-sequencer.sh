@@ -47,11 +47,11 @@ if [ ! -e "$resulting_dir" ]; then
     fi
 fi
 
-count=-2
+count=-1
 
 for item in "$@"; do
     # Will ignore the first two arguments
-    if [ $count -lt 0 ]; then
+    if [ $count -lt 1 ]; then
         count=$(($count+1))
         continue
     fi
