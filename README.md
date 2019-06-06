@@ -5,16 +5,14 @@ passed as arguments.
 
 Usage: run `./file-sequencer.sh --help`
 
-Recommended usage: sorting them by date
 
 ```shell
-ls -tr *.txt | xargs ./file-sequencer.sh '%04d.txt' new_dir
+# This will rename every 'txt' file to a sequence of 01.txt, 02.txt and up
+./file-sequencer.sh '%02d.txt' new_dir *.txt
+
+# This will sort them by date so that the oldest file becomes '01.txt' and so on
+ls -tr *.txt | xargs ./file-sequencer.sh '%02d.txt' new_dir
 ```
-
-Result of the above command:
-
-- Oldest file named *0001.txt* under new directory *new_dir*
-- Newest file named the maximum file sequence number, plus extension.
 
 To see the newly copied files in the last example, do:
 
@@ -23,7 +21,6 @@ cd new_dir
 ls
 ```
 
-Another example:
 <p align="center">
   <img
        src="https://cdn.discordapp.com/attachments/189767908509876224/585853094986907680/unknown.png">
