@@ -25,7 +25,7 @@ COMMAND=cp
 format="$1"
 resulting_dir="$2"
 
-printf "%s" "$format" | grep -qE '%[0-9]*d'
+printf "%s" "$format" | grep -qE '%[0-9]*[di]'
 
 if [ $? != 0 ]; then
     printf "Error: '%s' is not a valid format specifier.\n" "$format" >&2
