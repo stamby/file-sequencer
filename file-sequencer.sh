@@ -25,7 +25,7 @@ if [ "$1" = --help ] || [ $# -lt 3 ]; then
 fi
 
 # Either 'cp' or 'mv' will do
-COMMAND=cp
+COMMAND='cp -pv'
 format="$1"
 resulting_dir="$2"
 
@@ -56,7 +56,7 @@ for item in "$@"; do
         continue
     fi
 
-    command $COMMAND -pv "$item" "$resulting_dir/$(printf "$format" $count)"
+    command $COMMAND "$item" "$resulting_dir/$(printf "$format" $count)"
 done
 
 rmdir "$resulting_dir" 2> /dev/null
