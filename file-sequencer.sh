@@ -1,6 +1,6 @@
 #!/bin/sh
 
-name="`basename $0`"
+name="$(basename "$0")"
 
 usage() {
     cat << EOF >&2
