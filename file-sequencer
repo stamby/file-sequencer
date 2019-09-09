@@ -24,6 +24,16 @@ if [ $# -lt 3 ]; then
     usage
 fi
 
+if [ -z "$COUNT" ]; then
+    # Start with number one
+    COUNT=1
+else
+    printf '%s' "$COUNT" | grep -qxE '[0-9]+'
+    if [ $? != 0 ]; then
+        usage
+    fi
+fi
+
 if [ -z "$COMMAND" ]; then
     # Either 'cp' or 'mv' will do
     COMMAND='cp -pv'
@@ -50,11 +60,11 @@ if [ ! -e "$resulting_dir" ]; then
     fi
 fi
 
-count=-1
+count=$(($COUNT-2))
 
 for item in "$@"; do
     # Will ignore the first two arguments
-    if [ $count -lt 1 ]; then
+    if [ $count -lt "$COUNT" ]; then
         count=$(($count+1))
         continue
     fi
